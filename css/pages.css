@@ -1,0 +1,192 @@
+.todos-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.todo-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 1.2rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.2s;
+}
+
+.todo-item:hover {
+    transform: scale(1.01);
+}
+
+.todo-item__checkbox {
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--primary-color);
+    border-radius: 6px;
+}
+
+.todo-item--completed {
+    opacity: 0.6;
+}
+
+.todo-item--completed .todo-item__checkbox {
+    background: var(--primary-color);
+    position: relative;
+}
+
+.todo-item--completed .todo-item__checkbox::after {
+    content: '✓';
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+}
+
+.todo-item--completed .todo-item__title {
+    text-decoration: line-through;
+}
+
+.add-todo-btn {
+    margin-bottom: 1.5rem;
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.post-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.post-card__delete {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    cursor: pointer;
+    line-height: 1;
+    opacity: 0.5;
+    transition: all 0.2s;
+}
+
+.post-card__delete:hover {
+    opacity: 1;
+    color: #ff7675;
+}
+
+.post-card__title {
+    font-size: 1.2rem;
+    color: #fff;
+    text-transform: capitalize;
+    padding-right: 1.5rem;
+}
+
+.post-card__body {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.post-card__footer {
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: auto;
+}
+
+.comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.comment-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    border-radius: 15px;
+    border-left: 4px solid var(--primary-color);
+    position: relative;
+    animation: slideUp 0.3s ease forwards;
+}
+
+.comment-item__delete {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    cursor: pointer;
+    line-height: 1;
+    opacity: 0.5;
+    transition: all 0.2s;
+}
+
+.comment-item__delete:hover {
+    opacity: 1;
+    color: #ff7675;
+}
+
+.comment-item__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    padding-right: 1.5rem;
+}
+
+.comment-item__name {
+    color: #fff;
+    font-size: 1.1rem;
+    text-transform: capitalize;
+}
+
+.comment-item__email {
+    color: var(--primary-color);
+    font-size: 0.8rem;
+}
+
+.comment-item__body {
+    color: var(--text-muted);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
